@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(#aadef7,#2ac5b8);
+    color:#fff
+}
+
+.search{
+    border: solid 1px black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label{
+    font-size: 25px;
+}
+
+.movie_serach{
+    margin-left: 10px;
+    min-width: 200px;
+    padding: 5px 10px;
+}
+
+.card-img{
+    width: 100%;
+}
+
+.submit{
+    padding: 5px;
+}
+
+.card-title{
+    font-size: 25px;
+}
+
+.col{
+    border: solid 1.5px black;
+    gap: 10px;
+}
+
+.card-box{
+    flex-wrap: wrap;
+    gap: 10px; /* 요소들 사이의 여백 설정 */
+    width: auto;
+    height: auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+};
