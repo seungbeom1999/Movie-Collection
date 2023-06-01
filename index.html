@@ -17,7 +17,7 @@
     </header>
     <div class="search">
         <span class="label">영화 검색:</span>
-        <input type="text" class="movie_serach" placeholder="영화 제목을 검색해보세요">
+        <input type="text" id = "txt"class="movie_serach" onkeypress="keypress(event)" placeholder="영화 제목을 검색해보세요">
         <button class="submit" onclick="buttonClick()">검색</button>
     </div>
     <div id = "livecards-box"class="card-box" onclick="click()">
@@ -46,13 +46,21 @@
           console.log(response)
           let movies = response.results;
           let movieCards = "";
+          // click의 alert 값을 부여할려는 함수=
+          // const click=(movie.id) => alert("영화 id"+movie.id)
+          // function click(value) {
+          // let number = value 
+          // let el = document.getElement("livecards-box")
+          // el.addEventListener("click",function(){
+          // console.log("hello"+number)}
+          // )};
+          //  function click(ID) {
+          //   console.log("영화 id: " + ID);
+          //   }
+          // 영화 id:의 값을 내는 것
           movies.forEach((movie) => {
-          // movies.forEach((movie) => {
-          //   const click= document.getElementById('movie-card');
-          //   movie-card.addEventListener('click',()=>{console.log("클릭되었다.")})
-            // const click = () => {alert("영화 id: " + movie.id); };
             movieCards += `
-            <div id="livecards-box" class="card-box" onclick="alert('영화 id:'+ ${movie.id})">
+            <div id="livecards-box" class="Cards-box" onclick="alert('영화 id:'+ ${movie.id})">
                 <div class="col">
                   <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" class="card-img">
@@ -65,12 +73,10 @@
                 </div>
               </div>
             `
-            // console.log(movie.id);
           });
           document.getElementById("livecards-box").innerHTML = movieCards;
         })
         .catch((err) => console.error(err));
-        // const click=(movie.id) => alert("영화 id"+movie.id)
-    </script>
+        </script>
 </body>
 </html>

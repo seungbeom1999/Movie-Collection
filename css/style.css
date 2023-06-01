@@ -30,7 +30,7 @@ body{
 }
 
 .movie_serach{
-    margin-left: 10px;
+    margin: 10px;
     min-width: 200px;
     padding: 5px 10px;
 }
@@ -45,13 +45,14 @@ body{
 
 .card-title{
     font-size: 25px;
+    border: solid 1.8px black;
 }
 
 .col{
     border: solid 1.5px black;
     gap: 10px;
+    height: 588px;
 }
-
 .card-box{
     flex-wrap: wrap;
     gap: 10px; /* 요소들 사이의 여백 설정 */
@@ -60,4 +61,14 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-};
+}
+
+.Cards-box{
+    width: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.card-text{
+    border: solid 1.5px black;
+}
