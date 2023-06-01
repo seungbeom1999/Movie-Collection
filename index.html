@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내일배움캠프 최고 평점 영화</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="js/app.js"> -->
     <script src="js/app.js"></script>
 </head>
 <body>
@@ -32,53 +31,5 @@
             </div>
           </div>
     </div>
-    <script>
-      fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjI1YTQ1OGUyOWYwZmM3MmY3M2NmOWI2N2Q0Y2RhZSIsInN1YiI6IjY0NzQ3OTM2Y2MyNzdjMDBhNzQ1ZTkzNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.s7NxkvQgNu-c9D-N1Zs4Ae3m1qnf4ipY3X3zQd4XseA",
-        },
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          console.log(response)
-          let movies = response.results;
-          let movieCards = "";
-          // click의 alert 값을 부여할려는 함수=
-          // function click(value) {
-          // let number = value 
-          // let el = document.getElement("livecards-box")
-          // el.addEventListener("click",function(){
-          // console.log("hello"+number)}
-          // )};
-          //  function click(ID) {
-          //   console.log("영화 id: " + ID);
-          //   }
-          // 영화 id:의 값을 내는 것
-          movies.forEach((movie) => {
-            movieCards += `
-            <div id="livecards-box" class="Cards-box" onclick="alertID(${movie.id})">
-                <div class="col">
-                  <div class="movie-card">
-                    <img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" class="card-img">
-                    <div class="card-body">
-                      <h5 class="card-title">${movie.original_title}</h5>
-                      <p class="card-text">${movie.overview}</p>
-                      <p>평점<span class="rank">${movie.vote_average}</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `
-          });
-          document.getElementById("livecards-box").innerHTML = movieCards;
-        })
-        .catch((err) => console.error(err));
-        function alertID(value) 
-          {alert("영화 id:"+value)}
-          //<div id="livecards-box" class="Cards-box" onclick="alert('영화 id:'+ ${movie.id})">
-        </script>
 </body>
 </html>
