@@ -47,7 +47,6 @@
           let movies = response.results;
           let movieCards = "";
           // click의 alert 값을 부여할려는 함수=
-          // const click=(movie.id) => alert("영화 id"+movie.id)
           // function click(value) {
           // let number = value 
           // let el = document.getElement("livecards-box")
@@ -60,7 +59,7 @@
           // 영화 id:의 값을 내는 것
           movies.forEach((movie) => {
             movieCards += `
-            <div id="livecards-box" class="Cards-box" onclick="alert('영화 id:'+ ${movie.id})">
+            <div id="livecards-box" class="Cards-box" onclick="${click(movie.id)}">
                 <div class="col">
                   <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" class="card-img">
@@ -77,6 +76,8 @@
           document.getElementById("livecards-box").innerHTML = movieCards;
         })
         .catch((err) => console.error(err));
+        function click(value) 
+          {alert("영화 id: "+value)}
         </script>
 </body>
 </html>

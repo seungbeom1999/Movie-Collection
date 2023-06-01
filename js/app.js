@@ -50,8 +50,8 @@ function buttonClick() {
 //   } 
 // }
 function keypress(e){
-  // let txt = document.getElementsByClassName(".movie_serach").value;
-  let txt = document.querySelector(".movie_serach").value;
+  // let txt = document.getElementsByClassName("movie_serach").value;
+  let text = document.querySelector(".movie_serach").value;
   //13번인 이유는 enter의 keyCode가 13번이기 때문이다. 번호마다 키보드의 키가 다르다.
   if(e.keyCode == 13){
     buttonClick(txt)
