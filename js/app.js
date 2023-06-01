@@ -65,7 +65,7 @@ function buttonClick() {
 function keypress(e){
   let text = document.querySelector(".movie_serach").value;
   if(e.keyCode == 13){
-    buttonClick(txt)
+    buttonClick(text)
   }
 }
 
